@@ -8,7 +8,7 @@
 ## Daftar Isi
 #
 1. [Shell Scripting](#1-shell-scripting)
-    - [1.1 Shell](#1.1-shell)
+    - [1.1 Shell](#1-1-shell)
     - [1.2 Pemrograman Shell](#1.2-pemrograman-shell)
     - [1.3 Perintah Dasar Shell](#1.3-perintah-dasar-shell)
     - [1.4 Simple Shell Script](#1.4-simple-shell-script)
@@ -41,7 +41,7 @@
 
 
 # 1. Shell Scripting
-## 1.1 shell
+## 1.1 Shell
 Sistem operasi dibagi menjadi tiga komponen penting, yaitu Kernel, Shell, dan Program Utility.
 
 ![Komponen Sistem Operasi](https://github.com/afrchmdi/sisop-modul-1/blob/master/gambar/component.png)
