@@ -14,14 +14,14 @@ Penjelasan :
 ### 2.1 Membuat atau mengubah cron jobs
 1. Ketikkan `crontab -e`
 2. Ketikkan perintah crontab sesuai aturan parameter crontab
-[parameter crontab](link "parameter crontab")
+[parameter crontab](https://github.com/afrchmdi/sisop-modul-1/blob/master/gambar/syntax-crontab.png "parameter crontab")
 3. Untuk melihat daftar cron jobs ketikkan `crontab -l`
 
 Contoh perintah yang dijalankan crontab
-[contoh crontab](link "contoh crontab")
+[contoh crontab](https://github.com/afrchmdi/sisop-modul-1/blob/master/gambar/contoh-crontab.png "contoh crontab")
 Penjelasan :
 * setiap jam 00.00 memasukkan hasil `ls /home/tamtama` ke file `/home/tamtama/list_files`
 * setiap minggu menjalankan file `script.sh` pada folder `/home/tamtama`
 
 Untuk belajar lebih lanjut perintah-perintah crontab bisa mengakses website [crontab guru](https://crontab.guru/).
-[web crontab guru](link "web crontab guru")
+[web crontab guru](https://github.com/afrchmdi/sisop-modul-1/blob/master/gambar/crontab-guru.png "web crontab guru")
