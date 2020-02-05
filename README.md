@@ -25,3 +25,7 @@ Penjelasan :
 
 Untuk belajar lebih lanjut perintah-perintah crontab bisa mengakses website [crontab guru](https://crontab.guru/).   
 ![web crontab guru](https://github.com/afrchmdi/sisop-modul-1/blob/master/gambar/crontab-guru.png "web crontab guru")
+
+## 2.2 Referensi
+* [https://www.computerhope.com/unix/ucrontab.htm](https://www.computerhope.com/unix/ucrontab.htm)
+* [https://www.codepolitan.com/memahami-perintah-perintah-crontab-paling-lengkap-59f69445130a0](https://www.codepolitan.com/memahami-perintah-perintah-crontab-paling-lengkap-59f69445130a0)
