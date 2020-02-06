@@ -173,7 +173,7 @@ $ chmod +x hello.sh
 ```
 Eksekusi file script dengan cara ./nama_file.sh atau bash nama_file.sh.
 
-### SC
+![hello world](/gambar/1.4.png)
 
 ## 1.5 Variabel
 - Beberapa hal yang perlu diperhatikan dalam mendefinisikan variabel:
@@ -232,13 +232,13 @@ echo "Variabel array ke-1:" ${mahasiswa[2]}
 ```
 Output:
 
-### SC
+![variabel](/gambar/bash1-5.png)
 
 Catatan:
 
 Syntax array diatas hanya dapat dieksekusi oleh bash, sehingga harus dieksekusi dengan cara bash nama_file.sh atau bash ./nama_file.sh. Jika menggunakan ./nama_file.sh saja akan muncul error:
 
-### SC
+![error](/gambar/error1-5.png)
 
 ### 1.5.1 Special Variable
 Beberapa special variable yang sering dipakai:
@@ -267,7 +267,7 @@ echo "PID : $$"
 ```
 Output:
 
-### SC
+![special](/gambar/special.png)
 
 ## 1.6 Input Output
 - read digunakan untuk mengambil input dari keyboard dengan syntax sebagai berikut:
@@ -300,7 +300,7 @@ echo -e "\nHai $nama!\nSelamat datang di mata kuliah $matakuliah ! ;)"
 ```
 Output:
 
-### SC
+![input](/gambar/inp.png)
 
 Selain echo, bash juga menyediakan perintah builtin printf untuk menampilkan output dengan format tertentu, mirip bahasa C. Contoh:
 ```
@@ -315,7 +315,7 @@ printf "%d decimal dalam float = %.2f\n" $angka $angka
 ```
 Output:
 
-### SC
+![printf](/gambar/printf.png)
 
 ## 1.7 Quoting
 Shell Unix/Linux memiliki beberapa karakter spesial yang disebut dengan **metakarakter**. Karakter tersebut punya makna khusus jika digunakan di dalam shell script. Beberapa macam metakarakter:
