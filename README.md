@@ -839,11 +839,8 @@ Catatan: Dalam rule program awk boleh menghilangkan hanya salah satu di antara a
 Program awk memiliki rule yang memiliki kelakuan khusus. Di antaranya adalah BEGIN dan END. Rule BEGIN hanya dieksekusi satu kali, yaitu sebelum input dibaca. Rule END pun juga dieksekusi satu kali, hanya setelah semua input selesai dibaca. Contoh:
 ```bash
 awk '
-
-BEGIN { print "Jumlah baris yang terdapat \"732\"" }
-
+BEGIN { print "Ada berapa \"732\"?" }
 /732/  { ++n }
-
 END   { print "\"732\" muncul", n, "kali." }' kerajaan.txt
 ```
 Maka hasilnya adalah sebagai berikut:
