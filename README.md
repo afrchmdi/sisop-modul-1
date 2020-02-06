@@ -8,37 +8,35 @@
 ## Daftar Isi
 
 1. [Shell Scripting](#1-shell-scripting)
-    - [1.1 Shell](#-1.1-shell)
-    - [1.2 Pemrograman Shell](#1.2-pemrograman-shell)
-    - [1.3 Perintah Dasar Shell](#1.3-perintah-dasar-shell)
-    - [1.4 Simple Shell Script](#1.4-simple-shell-script)
-    - [1.5 Variabel](#1.5.1-variable)
-        - [1.5.1 Special Variable](#1.5.1-special-variable)
-    - [1.6 Input Output](#1.6-input-output)
-    - [1.7 Quoting](#1.7-quoting)
-    - [1.8 Operator Dasar](#1.8-operator-dasar)
-        - [1.8.1 Operator Aritmatika](#1.8.1-operator-aritmatika)
-        - [1.8.2 Operator Relasional](#1.8.2-operator-relasional)
-    - [1.9 Conditional Statement](#1.9-conditional-statement)
-        - [1.9.1 If...Else](#1.9.1-if...else)
-        - [1.9.2 Case...Esac](#1.9.2-case...esac)
-    - [1.10 Loop](#1.10-loop)
-        - [1.10.1 While Loop](#1.10.1-while-loop)
-        - [1.10.2 For Loop](#1.10.2-for-loop)
-        - [1.10.3 Until Loop](#1.10.3-until-loop)
-        - [1.10.4 Select Loop](#1.10.4-select-loop)
-        - [1.10.5 Nesting Loop](#1.10.5-nesting-loop)
-    - [1.11 Function](#1.11-function)
-        - [1.11.1 Nested Function](#1.11.1-nested-function)
+    - [1.1 Shell](#11-shell)
+    - [1.2 Pemrograman Shell](#12-pemrograman-shell)
+    - [1.3 Perintah Dasar Shell](#13-perintah-dasar-shell)
+    - [1.4 Simple Shell Script](#14-simple-shell-script)
+    - [1.5 Variabel](#15-variabel)
+        - [1.5.1 Special Variable](#151-special-variable)
+    - [1.6 Input Output](#16-input-output)
+    - [1.7 Quoting](#17-quoting)
+    - [1.8 Operator Dasar](#18-operator-dasar)
+        - [1.8.1 Operator Aritmatika](#181-operator-aritmatika)
+        - [1.8.2 Operator Relasional](#182-operator-relasional)
+    - [1.9 Conditional Statement](#19-conditional-statements)
+        - [1.9.1 If...Else](#191-ifelse)
+        - [1.9.2 Case](#192-case)
+    - [1.10 Loop](#110-loop)
+        - [1.10.1 While Loop](#1101-while-loop)
+        - [1.10.2 For Loop](#1102-for-loop)
+        - [1.10.3 Until Loop](#1103-until-loop)
+        - [1.10.4 Select Loop](#1104-select-loop)
+        - [1.10.5 Nesting Loop](#1105-nesting-loop)
+    - [1.11 Function](#111-function)
+        - [1.11.1 Nested Function](#1111-nested-function)
 2. [Cron](#2-cron)
-    - [2.1 Membuat atau mengubah cron jobs](#2.1-membuat-atau-mengubah-cron-jobs)
-    - [2.2 Referensi](#2.2-referensi)
+    - [2.1 Membuat atau mengubah cron jobs](#21-membuat-atau-mengubah-cron-jobs)
 3. [AWK](#3-awk)
-    - [3.1 Menjalankan Program AWK](#3.1-menjalankan-program-awk)
-    - [3.2 Special Rules](#3.2-special-rules)
-4. [Referensi](#4-referensi)
-5. [Latihan](#5-latihan)
-
+    - [3.1 Menjalankan Program AWK](#31-menjalankan-program-awk)
+    - [3.2 Special Rules](#32-special-rules)
+4. [Referensi](#-referensi)
+5. [Latihan](#-latihan)
 
 # 1. Shell Scripting
 ## 1.1 shell
@@ -865,7 +863,11 @@ Jumlah baris yang terdapat "732"
 Pada contoh di atas, rule kedua hanya memiliki action untuk melakukan perhitungan berapa jumlah baris yang mengandung "732", namun tidak ada action untuk menampilkan (print).
 
 ## Referensi
+* [https://www.computerhope.com/unix/ucrontab.htm](https://www.computerhope.com/unix/ucrontab.htm)
+* [https://www.codepolitan.com/memahami-perintah-perintah-crontab-paling-lengkap-59f69445130a0](https://www.codepolitan.com/memahami-perintah-perintah-crontab-paling-lengkap-59f69445130a0)
 
 ## Latihan
+1. kungkingkang
+2. Buatlah sebuah task scheduling menggunakan crontab dan sebuah bash script untuk memindahkan semua file mp3 ke /home/\<user>/Music, semua file mp4 ke /home/\<user>/Videos, dan semua file jpg ke /home/\<user>/Pictures setiap kelipatan 5 menit. Awalnya, semua file mp3, mp4, dan jpg tersebut terletak di /home/\<user> dan di dalam-dalamnya (recursively).
 3. Lakukan download dengan command wget https://archive.ics.uci.edu/ml/machine-learning-databases/00436/Container_Crane_Controller_Data_Set.csv untuk mendapatkan dataset. 
 Buatlah sebuah program awk yang dapat menampilkan total penjumlahan dari kolom 'speed' dan 'angle' hanya untuk record data yang memiliki nilai kolom 'power' = 0,5 berdasarkan dataset tersebut.
