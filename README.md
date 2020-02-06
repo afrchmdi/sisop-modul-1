@@ -3,7 +3,7 @@
 ## Prasyarat
 
 1. Menginstall OS Linux
-2. Memahami CLI (_Command Line Interface_)
+2. Memahami CLI (_Command Line Interface_) [Modul Pengenalan CLI](https://github.com/AZakyH/Modul-Pelatihan-Linux-2018/tree/master/CLI)
 
 ## Daftar Isi
 
@@ -772,10 +772,6 @@ Penjelasan :
 Untuk belajar lebih lanjut perintah-perintah crontab bisa mengakses website [crontab guru](https://crontab.guru/).   
 ![web crontab guru](https://github.com/afrchmdi/sisop-modul-1/blob/master/gambar/crontab-guru.png "web crontab guru")
 
-## 2.2 Referensi
-* [https://www.computerhope.com/unix/ucrontab.htm](https://www.computerhope.com/unix/ucrontab.htm)
-* [https://www.codepolitan.com/memahami-perintah-perintah-crontab-paling-lengkap-59f69445130a0](https://www.codepolitan.com/memahami-perintah-perintah-crontab-paling-lengkap-59f69445130a0)
-
 # 3. AWK
 __awk__ merupakan sebuah program yang bisa digunakan untuk mengambil catatan/record tertentu dalam sebuah file dan melakukan sebuah/beberapa operasi terhadap catatan/record tersebut.
 
@@ -845,13 +841,15 @@ END   { print "\"732\" muncul", n, "kali." }' kerajaan.txt
 ```
 Maka hasilnya adalah sebagai berikut:
 ```
-Jumlah baris yang terdapat "732"
+Ada berapa "732"?
 
 "732" muncul 2 kali.
 ```
 Pada contoh di atas, rule kedua hanya memiliki action untuk melakukan perhitungan berapa jumlah baris yang mengandung "732", namun tidak ada action untuk menampilkan (print).
 
 ## Referensi
+* [https://www.tutorialspoint.com/unix/shell_scripting.htm](https://www.tutorialspoint.com/unix/shell_scripting.htm)
+* [https://pemula.linux.or.id/programming/bash-shell.html](https://pemula.linux.or.id/programming/bash-shell.html)
 * [https://www.computerhope.com/unix/ucrontab.htm](https://www.computerhope.com/unix/ucrontab.htm)
 * [https://www.codepolitan.com/memahami-perintah-perintah-crontab-paling-lengkap-59f69445130a0](https://www.codepolitan.com/memahami-perintah-perintah-crontab-paling-lengkap-59f69445130a0)
 * [https://vpswp.blogspot.com/2015/06/definisi-dan-6-contoh-fungsi-perintah-awk-linux.html](https://vpswp.blogspot.com/2015/06/definisi-dan-6-contoh-fungsi-perintah-awk-linux.html)
