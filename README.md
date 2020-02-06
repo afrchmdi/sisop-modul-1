@@ -166,7 +166,7 @@ $ chmod +x hello.sh
 ```
 Eksekusi file script dengan cara ./nama_file.sh atau bash nama_file.sh.
 
-### SC
+![hello world](/gambar/1.4.png)
 
 ## 1.5 Variabel
 - Beberapa hal yang perlu diperhatikan dalam mendefinisikan variabel:
@@ -225,13 +225,13 @@ echo "Variabel array ke-1:" ${mahasiswa[2]}
 ```
 Output:
 
-### SC
+![variabel](/gambar/bash1-5.png)
 
 Catatan:
 
 Syntax array diatas hanya dapat dieksekusi oleh bash, sehingga harus dieksekusi dengan cara bash nama_file.sh atau bash ./nama_file.sh. Jika menggunakan ./nama_file.sh saja akan muncul error:
 
-### SC
+![error](/gambar/error1-5.png)
 
 ### 1.5.1 Special Variable
 Beberapa special variable yang sering dipakai:
@@ -260,7 +260,7 @@ echo "PID : $$"
 ```
 Output:
 
-### SC
+![special](/gambar/special.png)
 
 ## 1.6 Input Output
 - read digunakan untuk mengambil input dari keyboard dengan syntax sebagai berikut:
@@ -293,7 +293,7 @@ echo -e "\nHai $nama!\nSelamat datang di mata kuliah $matakuliah ! ;)"
 ```
 Output:
 
-### SC
+![input](/gambar/inp.png)
 
 Selain echo, bash juga menyediakan perintah builtin printf untuk menampilkan output dengan format tertentu, mirip bahasa C. Contoh:
 ```bash
@@ -308,7 +308,7 @@ printf "%d decimal dalam float = %.2f\n" $angka $angka
 ```
 Output:
 
-### SC
+![printf](/gambar/printf.png)
 
 ## 1.7 Quoting
 Shell Unix/Linux memiliki beberapa karakter spesial yang disebut dengan **metakarakter**. Karakter tersebut punya makna khusus jika digunakan di dalam shell script. Beberapa macam metakarakter:
@@ -857,6 +857,10 @@ Pada contoh di atas, rule kedua hanya memiliki action untuk melakukan perhitunga
 ## Referensi
 * [https://www.computerhope.com/unix/ucrontab.htm](https://www.computerhope.com/unix/ucrontab.htm)
 * [https://www.codepolitan.com/memahami-perintah-perintah-crontab-paling-lengkap-59f69445130a0](https://www.codepolitan.com/memahami-perintah-perintah-crontab-paling-lengkap-59f69445130a0)
+*[https://vpswp.blogspot.com/2015/06/definisi-dan-6-contoh-fungsi-perintah-awk-linux.html](https://vpswp.blogspot.com/2015/06/definisi-dan-6-contoh-fungsi-perintah-awk-linux.html)
+*[https://www.codepolitan.com/belajar-bash-mencoba-bash-untuk-pertama-kali-57bbca3c28e54-17341](https://www.codepolitan.com/belajar-bash-mencoba-bash-untuk-pertama-kali-57bbca3c28e54-17341)
+*[https://pemula.linux.or.id/programming/bash-shell.html](https://pemula.linux.or.id/programming/bash-shell.html)
+
 
 ## Latihan
 1. kungkingkang
