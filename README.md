@@ -341,7 +341,7 @@ echo "$single"
 echo \<-\$1500.\*\*\>\; \(update\?\) \[y\|n\]
 
 #Backquote
-dmn=`pws`
+dmn=`pwd`
 echo "Dimana kita? " $dmn
 ```
 
