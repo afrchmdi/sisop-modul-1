@@ -867,3 +867,5 @@ Pada contoh di atas, rule kedua hanya memiliki action untuk melakukan perhitunga
 ## Referensi
 
 ## Latihan
+3. Lakukan download dengan command wget https://archive.ics.uci.edu/ml/machine-learning-databases/00436/Container_Crane_Controller_Data_Set.csv untuk mendapatkan dataset. 
+Buatlah sebuah program awk yang dapat menampilkan total penjumlahan dari kolom 'speed' dan 'angle' hanya untuk record data yang memiliki nilai kolom 'power' = 0,5 berdasarkan dataset tersebut.
