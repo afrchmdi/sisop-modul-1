@@ -863,7 +863,7 @@ Pada contoh di atas, rule kedua hanya memiliki action untuk melakukan perhitunga
 
 
 ## Latihan
-1. kungkingkang
+1. Buatlah sebuah program bash script untuk menentukan apakah bilangan yang diinputkan sebagai argumen merupakan angka prima atau bukan. Input berupa integer dan jumlah input argumen bisa lebih dari satu.
 2. Buatlah sebuah task scheduling menggunakan crontab dan sebuah bash script untuk memindahkan semua file mp3 ke /home/\<user>/Music, semua file mp4 ke /home/\<user>/Videos, dan semua file jpg ke /home/\<user>/Pictures setiap kelipatan 5 menit. Awalnya, semua file mp3, mp4, dan jpg tersebut terletak di /home/\<user> dan di dalam-dalamnya (recursively).
 3. Lakukan download dengan command `wget https://archive.ics.uci.edu/ml/machine-learning-databases/00436/Container_Crane_Controller_Data_Set.csv` untuk mendapatkan dataset. 
 Buatlah sebuah program awk yang dapat menampilkan total penjumlahan dari kolom 'speed' dan 'angle' hanya untuk record data yang memiliki nilai kolom 'power' = 0,5 berdasarkan dataset tersebut!
