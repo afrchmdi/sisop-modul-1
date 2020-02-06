@@ -41,10 +41,10 @@
 
 
 # 1. Shell Scripting
-## 1.1 Shell
+## 1.1 shell
 Sistem operasi dibagi menjadi tiga komponen penting, yaitu Kernel, Shell, dan Program Utility.
 
-![Komponen Sistem Operasi](https://github.com/afrchmdi/sisop-modul-1/blob/master/gambar/component.png)
+![Komponen Sistem Operasi](img/component.png)
 
 - __Kernel__ adalah inti dari komputer. Komponen ini memungkinkan terjadinya komunikasi antara software dan hardware. Jika kernel adalah bagian terdalam dari sebuah sistem operasi, maka __shell__ adalah bagian terluarnya.
 - __Shell__ adalah program penerjemah perintah yang menjembatani user dengan kernel. Umumnya, shell menyediakan __prompt__ sebagai user interface tempat user menginputkan perintah-perintah yang diinginkan, baik berupa perintah internal maupun eksternal. Setelah menerima input dari user dan menjalankan program/perintah berdasarkan input tersebut, shell akan mengeluarkan output. Shell dapat diakses melalui __Terminal__.
@@ -63,11 +63,261 @@ Ada 2 tipe shell utama di Unix/Linux, yaitu:
     - C Shell (csh)
     - TENEX/TOPS C Shell (tcsh)
 ## 1.2 Pemrograman Shell
+Pemrograman shell adalah menyusun beberapa perintah shell (internal maupun eksternal) menjadi serangkaian perintah untuk melakukan tugas tertentu.
+Kelebihan shell di Linux adalah memungkinkan user untuk menyusun serangkaian perintah seperti halnya bahasa pemrograman interpreter, yakni melakukan proses input output, menyeleksi kondisi (decision making), looping, membuat fungsi, dsb.
+
+Pemrograman shell di Unix/Linux juga disebut dengan shell scripting. Untuk memudahkan, shell script dapat disimpan ke dalam sebuah file yang dapat dieksekusi kapanpun kita inginkan.
+    
+Manfaat belajar shell scripting:
+
+- Dapat bekerja secara efektif dan efisien karena tidak perlu mengetik serangkaian perintah secara berulang-ulang, cukup menulis dan mengeksekusi satu file saja
+
+- Dapat menjalankan beberapa perintah sebagai satu perintah
+
+- Dapat menjalankan perintah secara otomatis
 ## 1.3 Perintah Dasar Shell
+Pada modul ini jenis shell yang digunakan adalah Bash (_Bourne Again SHell_) karena bash paling banyak digunakan dalam distro Linux. Untuk mengecek shell apa yang sedang kalian gunakan, bisa dengan menggunakan 
+
+```$ echo $SHELL```
+
+Shell memiliki perintah internal (built-in shell) dan perintah eksternal. Untuk mengecek apakah sebuah perintah termasuk internal atau eksternal, gunakan perintah type
+
+```
+$ type cd
+
+cd is a shell builtin
+
+$ type bash
+
+bash is /bin/bash
+
+$ type read
+
+read is a shell builtin 
+
+$ type chmod
+
+chmod is /bin/chmod
+```
+
+- Contoh perintah internal: 
+
+    cd, pwd, times, alias, umask, exit, logout, fg, bg, ls, mkdir, rmdir, mv, cp, rm, clear, ...
+
+- Contoh perintah eksternal: 
+
+    cat, cut, paste, chmod, lpr,.... 
+
+
+Selain itu, terdapat beberapa karakter yang cukup penting untuk digunakan dalam shell:
+
+- __Redirection__ (mengirim output ke file atau menerima input dari file) menggunakan operator redirect >, >>, <, contoh:
+
+```
+ls /home/Documents > test.txt
+
+#hasil output ls dari directori /home/Documents dikirim ke file test.txt. jika file belum ada akan dibuat, tetapi jika sudah ada, isinya akan ditimpa
+
+ls /home/Documents >> test.txt
+#hampir sama, bedanya jika file sudah ada maka isinya akan ditambah di akhir file
+
+sort < test.txt
+#file test.txt dijadikan input oleh perintah sort
+```
+
+- __Pipe__ (output suatu perintah menjadi input perintah lain) menggunakan operator |, contoh:
+```
+ls -l | sort -s
+#ouput perintah ls -l menjadi input perintah sort -s (urutkan secara descending)
+```
+- __Wildcard__ menggunakan karakter *, ?, [ ], contoh:
+```
+ls a*
+#tampilkan semua file yang dimulai dengan a
+
+ls a?a
+#tampilkan file yang dimulai dengan a, kemudian sembarang karakter tunggal, dan diakhiri dengan a
+
+ls [re]*
+#tampilkan file yang dimulai dengan salah satu karakter r atau e
+```
+Untuk melihat informasi selengkapnya tentang bash shell, silahkan membuka manual bash dengan cara:
+
+```
+$ man bash
+```
+
 ## 1.4 Simple Shell Script
+Buatlah sebuah file berekstensi .sh menggunakan editor apapun, misalnya nano, vi, atau gedit.
+
+```
+$ nano nama_file.sh
+```
+Misalnya:
+
+`
+$ nano hello.sh
+`
+
+Tulis beberapa baris perintah disana, diawali dengan shebang `#!/bin/bash`. 
+
+Shebang berfungsi untuk memberitahu sistem bahwa perintah-perintah yg ada di dalam file tersebut harus dijalankan oleh Bash.
+
+```
+#!/bin/bash
+
+echo "Hello, world!"
+```
+
+Simpan dan ubah permission file script agar dapat dieksekusi.
+```
+$ chmod +x hello.sh
+```
+Eksekusi file script dengan cara ./nama_file.sh atau bash nama_file.sh.
+
+### SC
+
 ## 1.5 Variabel
+- Beberapa hal yang perlu diperhatikan dalam mendefinisikan variabel:
+
+    i. Nama variabel hanya boleh terdiri dari:
+    - Huruf (a-z dan A-Z)
+    - Angka (0-9)
+    - Karakter underscore (_)
+    
+    ii.  Nama variabel dimulai dengan huruf atau underscore
+    
+    iii. Tidak boleh menggunakan karakter spesial seperti !, *, $, #, -, dll karena karakter tersebut punya makna khusus untuk shell
+
+    iv. Bersifat case sensitive (membedakan huruf besar dan kecil)
+
+- Syntax
+
+    - Mendefinisikan variabel
+    ```
+    nama_var=nilai
+    ```
+    - Mengakses variabel
+    ```
+    $nama_var
+    ```
+- Tipe-Tipe Variabel
+    - String
+    ```
+    nama_var="string"
+    ```
+    - Integer
+    ```
+    nama_var=nilai
+    ```
+    - Array
+        
+        #Jika isi array berupa string
+    
+        nama_var=("string0" "string1" "string2" ... "stringN")
+
+        #Jika isi array berupa integer
+        
+        nama_var=(nilai0 nilai1 nilai2 ... nilaiN)    
+
+Contoh:
+```
+#!/bin/bash
+
+mata_kuliah="Sistem Operasi"
+semester=12
+mahasiswa=("Jamal" "Taufik" "Dobleh" "Kabur")
+
+echo "Variabel string:" $mata_kuliah
+echo "Variabel integer:" $semester
+echo "Variabel array ke-1:" ${mahasiswa[2]}
+```
+Output:
+
+### SC
+
+Catatan:
+
+Syntax array diatas hanya dapat dieksekusi oleh bash, sehingga harus dieksekusi dengan cara bash nama_file.sh atau bash ./nama_file.sh. Jika menggunakan ./nama_file.sh saja akan muncul error:
+
+### SC
+
 ### 1.5.1 Special Variable
+Beberapa special variable yang sering dipakai:
+
+| Variable                                        | Deskripsi                                                                            |
+| --------------------------------------------------------- |:--------------------------------------------------------------------------------------- |
+|   $0   | Berisi nama file script yang sedang dijalankan
+|   $n   | n disini adalah angka desimal positif yang sesuai dengan posisi argumen (argumen pertama adalah $1, argumen kedua adalah $2, dst)
+|   $#   | Jumlah argumen yang diinput pada script
+|   $*   | Semua argumen $n
+|   $?   | Status exit dari perintah terakhir yang dijalankan
+|   $$   | Proses ID (PID) shell saat ini
+
+
+Contoh:
+```
+#!/bin/bash
+
+echo "Nama script : $0"
+echo "Argumen ke-1 : $1"
+echo "Argumen ke-2 : $2"
+echo "Hai $1, selamat datang di kelas $2!"
+echo "Total argumen : $#"
+echo "Semua argumen : $*"
+echo "PID : $$" 
+```
+Output:
+
+### SC
+
 ## 1.6 Input Output
+- read digunakan untuk mengambil input dari keyboard dengan syntax sebagai berikut:
+
+    `read nama_var`
+
+- echo digunakan untuk menampilkan output dengan syntax sebagai berikut:
+
+    #Menampilkan teks biasa
+
+    `echo "teks"`
+
+    #Menampilkan isi dari sebuah variabel
+
+    `echo $nama_var`
+
+Catatan:
+
+Jika ingin menggunakan new line character (\n) pada echo, gunakan echo -e "teks\n teks"
+
+Contoh:
+```
+#!/bin/bash
+
+matakuliah="Sistem Operasi"
+
+echo "Siapa namamu?"
+read nama
+echo -e "\nHai $nama!\nSelamat datang di mata kuliah $matakuliah ! ;)"
+```
+Output:
+
+### SC
+
+Selain echo, bash juga menyediakan perintah builtin printf untuk menampilkan output dengan format tertentu, mirip bahasa C. Contoh:
+```
+#!/bin/bash
+
+matkul="Sistem Operasi";
+angka=12;
+
+printf "Ini enter\n\tdi bash\n";
+printf "Matakuliah apa? %s\n" $matkul;
+printf "%d decimal dalam float = %.2f\n" $angka $angka
+```
+Output:
+
+### SC
 
 ## 1.7 Quoting
 Shell Unix/Linux memiliki beberapa karakter spesial yang disebut dengan **metakarakter**. Karakter tersebut punya makna khusus jika digunakan di dalam shell script. Beberapa macam metakarakter:
@@ -549,3 +799,71 @@ Syntax:
 ```
 awk options 'selection _criteria {action }' input-file > output-file
 ```
+### Cara Kerja AWK
+- Awk membaca baris dalam sebuah file.
+
+- Untuk beberapa baris, ini dicocokkan dengan pola yang dibuat. Jika polanya cocok maka keputusan selanjutnya bisa dilakukan, seperti print misalnya.
+
+- Jika tidak ada pola yang cocok, maka tidak ada action/keputusan yang akan diambil.
+
+- Memberikan pola atau action tidak diharuskan.
+
+- Jika tidak ada pola yang dibuat, maka output default nya adalah setiap baris dari file yang anda pakai.
+
+- Jika tidak ada action/keputusan yang dibuat, maka output default nya adalah memunculkan hasil pencarian pada layar anda.
+
+- Kurung kurawal tanpa action itu artinya tidak ada keputusan, tapi tidak akan memunculkan output default tadi.
+
+- Setiap statemen dalam action harus di pisahkan dengan tanda titik koma (;)
+
+Misalnya kita memiliki data kerajaan sebagai berikut:
+```
+mataram sanjaya 732 760
+kutai mulawarman  400 446
+singasari ken 1222 1227
+majapahit gajahmada 1334 1364
+tarumanegara sanjaya 732 754
+sriwijaya balaputradewa 792 835
+```
+Secara default awk akan print semua baris pada file masukan:
+
+awk '{print}' kerajaan.txt
+Print baris yang mengandung pola yang dimasukkan:
+
+awk '/sanjaya/ {print}' kerajaan.txt
+Maka hasilnya adalah sebagai berikut:
+```
+mataram sanjaya 732 760
+tarumanegara sanjaya 732 754
+```
+Dalam setiap baris, awk akan membagi setiap kata yang dipisahkan oleh spasi dan menyimpannya pada variabel $n. Jika terdapat 4 kata pada satu baris, maka kata pertama akan disimpan pada variabel $1, kata kedua pada variabel $2, dan seterusnya. $0 merepresentasikan semua kata yang ada pada satu baris.
+
+awk '/ken/ {print $1,$2}' kerajaan.txt
+Maka hasilnya adalah sebagai berikut:
+```
+singasari ken
+```
+Catatan: Dalam rule program awk boleh menghilangkan hanya salah satu di antara action atau pola. Jika pola dihilangkan, maka action akan diberlakukan ke semua baris. Sedangkan jika action dihilangkan, maka setiap baris yang mengandung pola tersebut akan secara default ditampilkan secara penuh.
+
+## 3.2 Special Rules
+Program awk memiliki rule yang memiliki kelakuan khusus. Di antaranya adalah BEGIN dan END. Rule BEGIN hanya dieksekusi satu kali, yaitu sebelum input dibaca. Rule END pun juga dieksekusi satu kali, hanya setelah semua input selesai dibaca. Contoh:
+```
+awk '
+
+BEGIN { print "Jumlah baris yang terdapat \"732\"" }
+
+/732/  { ++n }
+
+END   { print "\"732\" muncul", n, "kali." }' kerajaan.txt
+```
+Maka hasilnya adalah sebagai berikut:
+```
+Jumlah baris yang terdapat "732"
+
+"732" muncul 2 kali.
+```
+Pada contoh di atas, rule kedua hanya memiliki action untuk melakukan perhitungan berapa jumlah baris yang mengandung "732", namun tidak ada action untuk menampilkan (print).
+
+## Referensi
+
+## Latihan
