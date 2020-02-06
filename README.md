@@ -8,28 +8,28 @@
 ## Daftar Isi
 
 1. [Shell Scripting](#1-shell-scripting)
-    - [1.1 Shell](#-1.1-shell)
+    - [1.1 Shell](#1.1-shell)
     - [1.2 Pemrograman Shell](#1.2-pemrograman-shell)
     - [1.3 Perintah Dasar Shell](#1.3-perintah-dasar-shell)
     - [1.4 Simple Shell Script](#1.4-simple-shell-script)
-    - [1.5 Variabel](#1.5.1-variable)
+    - [1.5 Variabel](#1.5-variabel)
         - [1.5.1 Special Variable](#1.5.1-special-variable)
     - [1.6 Input Output](#1.6-input-output)
     - [1.7 Quoting](#1.7-quoting)
     - [1.8 Operator Dasar](#1.8-operator-dasar)
         - [1.8.1 Operator Aritmatika](#1.8.1-operator-aritmatika)
         - [1.8.2 Operator Relasional](#1.8.2-operator-relasional)
-    - [1.9 Conditional Statement](#1.9-conditional-statement)
+    - [1.9 Conditional Statement](#1.9-conditional-statements)
         - [1.9.1 If...Else](#1.9.1-if...else)
-        - [1.9.2 Case...Esac](#1.9.2-case...esac)
+        - [1.9.2 Case...Esac](#1.9.2-case)
     - [1.10 Loop](#1.10-loop)
         - [1.10.1 While Loop](#1.10.1-while-loop)
         - [1.10.2 For Loop](#1.10.2-for-loop)
         - [1.10.3 Until Loop](#1.10.3-until-loop)
         - [1.10.4 Select Loop](#1.10.4-select-loop)
-        - [1.10.5 Nesting Loop](#1.10.5-nesting-loop)
+        - [1.10.5 Nesting Loop](#1.10.5-nesting-loops)
     - [1.11 Function](#1.11-function)
-        - [1.11.1 Nested Function](#1.11.1-nested-function)
+        - [1.11.1 Nested Function](#1.11.1-nested-functions)
 2. [Cron](#2-cron)
     - [2.1 Membuat atau mengubah cron jobs](#2.1-membuat-atau-mengubah-cron-jobs)
     - [2.2 Referensi](#2.2-referensi)
@@ -864,8 +864,8 @@ Jumlah baris yang terdapat "732"
 ```
 Pada contoh di atas, rule kedua hanya memiliki action untuk melakukan perhitungan berapa jumlah baris yang mengandung "732", namun tidak ada action untuk menampilkan (print).
 
-## Referensi
+## 4. Referensi
 
-## Latihan
-3. Lakukan download dengan command wget https://archive.ics.uci.edu/ml/machine-learning-databases/00436/Container_Crane_Controller_Data_Set.csv untuk mendapatkan dataset. 
+## 5. Latihan
+3. Lakukan download dengan command `wget https://archive.ics.uci.edu/ml/machine-learning-databases/00436/Container_Crane_Controller_Data_Set.csv` untuk mendapatkan dataset. 
 Buatlah sebuah program awk yang dapat menampilkan total penjumlahan dari kolom 'speed' dan 'angle' hanya untuk record data yang memiliki nilai kolom 'power' = 0,5 berdasarkan dataset tersebut.
