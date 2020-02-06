@@ -39,7 +39,7 @@
 5. [Latihan](#-latihan)
 
 # 1. Shell Scripting
-## 1.1 shell
+## 1.1 Shell
 Sistem operasi dibagi menjadi tiga komponen penting, yaitu Kernel, Shell, dan Program Utility.
 
 ![Komponen Sistem Operasi](/gambar/component.png)
@@ -76,25 +76,20 @@ Manfaat belajar shell scripting:
 ## 1.3 Perintah Dasar Shell
 Pada modul ini jenis shell yang digunakan adalah Bash (_Bourne Again SHell_) karena bash paling banyak digunakan dalam distro Linux. Untuk mengecek shell apa yang sedang kalian gunakan, bisa dengan menggunakan 
 
-```$ echo $SHELL```
+```bash
+$ echo $SHELL
+```
 
 Shell memiliki perintah internal (built-in shell) dan perintah eksternal. Untuk mengecek apakah sebuah perintah termasuk internal atau eksternal, gunakan perintah type
 
-```
+```bash
 $ type cd
-
 cd is a shell builtin
-
 $ type bash
-
 bash is /bin/bash
-
 $ type read
-
 read is a shell builtin 
-
 $ type chmod
-
 chmod is /bin/chmod
 ```
 
@@ -111,9 +106,8 @@ Selain itu, terdapat beberapa karakter yang cukup penting untuk digunakan dalam 
 
 - __Redirection__ (mengirim output ke file atau menerima input dari file) menggunakan operator redirect >, >>, <, contoh:
 
-```
+```bash
 ls /home/Documents > test.txt
-
 #hasil output ls dari directori /home/Documents dikirim ke file test.txt. jika file belum ada akan dibuat, tetapi jika sudah ada, isinya akan ditimpa
 
 ls /home/Documents >> test.txt
@@ -124,12 +118,12 @@ sort < test.txt
 ```
 
 - __Pipe__ (output suatu perintah menjadi input perintah lain) menggunakan operator |, contoh:
-```
+```bash
 ls -l | sort -s
 #ouput perintah ls -l menjadi input perintah sort -s (urutkan secara descending)
 ```
 - __Wildcard__ menggunakan karakter *, ?, [ ], contoh:
-```
+```bash
 ls a*
 #tampilkan semua file yang dimulai dengan a
 
@@ -141,14 +135,14 @@ ls [re]*
 ```
 Untuk melihat informasi selengkapnya tentang bash shell, silahkan membuka manual bash dengan cara:
 
-```
+```bash
 $ man bash
 ```
 
 ## 1.4 Simple Shell Script
 Buatlah sebuah file berekstensi .sh menggunakan editor apapun, misalnya nano, vi, atau gedit.
 
-```
+```bash
 $ nano nama_file.sh
 ```
 Misalnya:
@@ -161,14 +155,13 @@ Tulis beberapa baris perintah disana, diawali dengan shebang `#!/bin/bash`.
 
 Shebang berfungsi untuk memberitahu sistem bahwa perintah-perintah yg ada di dalam file tersebut harus dijalankan oleh Bash.
 
-```
+```bash
 #!/bin/bash
-
 echo "Hello, world!"
 ```
 
 Simpan dan ubah permission file script agar dapat dieksekusi.
-```
+```bash
 $ chmod +x hello.sh
 ```
 Eksekusi file script dengan cara ./nama_file.sh atau bash nama_file.sh.
@@ -219,7 +212,7 @@ Eksekusi file script dengan cara ./nama_file.sh atau bash nama_file.sh.
         nama_var=(nilai0 nilai1 nilai2 ... nilaiN)    
 
 Contoh:
-```
+```bash
 #!/bin/bash
 
 mata_kuliah="Sistem Operasi"
@@ -254,7 +247,7 @@ Beberapa special variable yang sering dipakai:
 
 
 Contoh:
-```
+```bash
 #!/bin/bash
 
 echo "Nama script : $0"
@@ -289,7 +282,7 @@ Catatan:
 Jika ingin menggunakan new line character (\n) pada echo, gunakan echo -e "teks\n teks"
 
 Contoh:
-```
+```bash
 #!/bin/bash
 
 matakuliah="Sistem Operasi"
@@ -303,7 +296,7 @@ Output:
 ### SC
 
 Selain echo, bash juga menyediakan perintah builtin printf untuk menampilkan output dengan format tertentu, mirip bahasa C. Contoh:
-```
+```bash
 #!/bin/bash
 
 matkul="Sistem Operasi";
@@ -794,7 +787,7 @@ Awk adalah bahasa scripting yang digunakan untuk memanipulasi data dan menghasil
 
 ## 3.1 Menjalankan Program AWK
 Syntax:
-```
+```bash
 awk options 'selection _criteria {action }' input-file > output-file
 ```
 ### Cara Kerja AWK
@@ -823,12 +816,11 @@ majapahit gajahmada 1334 1364
 tarumanegara sanjaya 732 754
 sriwijaya balaputradewa 792 835
 ```
-Secara default awk akan print semua baris pada file masukan:
+Secara default awk akan print semua baris pada file masukan:  
+`awk '{print}' kerajaan.txt`  
 
-awk '{print}' kerajaan.txt
 Print baris yang mengandung pola yang dimasukkan:
-
-awk '/sanjaya/ {print}' kerajaan.txt
+`awk '/sanjaya/ {print}' kerajaan.txt`  
 Maka hasilnya adalah sebagai berikut:
 ```
 mataram sanjaya 732 760
@@ -836,7 +828,7 @@ tarumanegara sanjaya 732 754
 ```
 Dalam setiap baris, awk akan membagi setiap kata yang dipisahkan oleh spasi dan menyimpannya pada variabel $n. Jika terdapat 4 kata pada satu baris, maka kata pertama akan disimpan pada variabel $1, kata kedua pada variabel $2, dan seterusnya. $0 merepresentasikan semua kata yang ada pada satu baris.
 
-awk '/ken/ {print $1,$2}' kerajaan.txt
+`awk '/ken/ {print $1,$2}' kerajaan.txt`  
 Maka hasilnya adalah sebagai berikut:
 ```
 singasari ken
@@ -845,7 +837,7 @@ Catatan: Dalam rule program awk boleh menghilangkan hanya salah satu di antara a
 
 ## 3.2 Special Rules
 Program awk memiliki rule yang memiliki kelakuan khusus. Di antaranya adalah BEGIN dan END. Rule BEGIN hanya dieksekusi satu kali, yaitu sebelum input dibaca. Rule END pun juga dieksekusi satu kali, hanya setelah semua input selesai dibaca. Contoh:
-```
+```bash
 awk '
 
 BEGIN { print "Jumlah baris yang terdapat \"732\"" }
@@ -869,7 +861,5 @@ Pada contoh di atas, rule kedua hanya memiliki action untuk melakukan perhitunga
 ## Latihan
 1. kungkingkang
 2. Buatlah sebuah task scheduling menggunakan crontab dan sebuah bash script untuk memindahkan semua file mp3 ke /home/\<user>/Music, semua file mp4 ke /home/\<user>/Videos, dan semua file jpg ke /home/\<user>/Pictures setiap kelipatan 5 menit. Awalnya, semua file mp3, mp4, dan jpg tersebut terletak di /home/\<user> dan di dalam-dalamnya (recursively).
-3. Lakukan download dengan command  
-`wget https://archive.ics.uci.edu/ml/machine-learning-databases/00436/Container_Crane_Controller_Data_Set.csv`  
-untuk mendapatkan dataset. 
+3. Lakukan download dengan command `wget https://archive.ics.uci.edu/ml/machine-learning-databases/00436/Container_Crane_Controller_Data_Set.csv` untuk mendapatkan dataset. 
 Buatlah sebuah program awk yang dapat menampilkan total penjumlahan dari kolom 'speed' dan 'angle' hanya untuk record data yang memiliki nilai kolom 'power' = 0,5 berdasarkan dataset tersebut.
