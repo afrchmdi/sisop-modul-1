@@ -35,8 +35,8 @@
 3. [AWK](#3-awk)
     - [3.1 Menjalankan Program AWK](#31-menjalankan-program-awk)
     - [3.2 Special Rules](#32-special-rules)
-4. [Referensi](#-referensi)
-5. [Latihan](#-latihan)
+4. [Referensi](#referensi)
+5. [Latihan](#latihan)
 
 # 1. Shell Scripting
 ## 1.1 Shell
