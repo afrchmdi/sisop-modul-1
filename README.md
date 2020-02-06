@@ -44,7 +44,7 @@
 ## 1.1 shell
 Sistem operasi dibagi menjadi tiga komponen penting, yaitu Kernel, Shell, dan Program Utility.
 
-![Komponen Sistem Operasi](img/component.png)
+![Komponen Sistem Operasi](/gambar/component.png)
 
 - __Kernel__ adalah inti dari komputer. Komponen ini memungkinkan terjadinya komunikasi antara software dan hardware. Jika kernel adalah bagian terdalam dari sebuah sistem operasi, maka __shell__ adalah bagian terluarnya.
 - __Shell__ adalah program penerjemah perintah yang menjembatani user dengan kernel. Umumnya, shell menyediakan __prompt__ sebagai user interface tempat user menginputkan perintah-perintah yang diinginkan, baik berupa perintah internal maupun eksternal. Setelah menerima input dari user dan menjalankan program/perintah berdasarkan input tersebut, shell akan mengeluarkan output. Shell dapat diakses melalui __Terminal__.
