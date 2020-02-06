@@ -316,7 +316,8 @@ Shell Unix/Linux memiliki beberapa karakter spesial yang disebut dengan **metaka
 * ? [ ] ' " \ $ ; & ( ) | ^ < > new-line space tab
 ```
 
-Ada 4 jenis **quoting**, yaitu:   
+Ada 4 jenis **quoting**, yaitu:
+
 | No | Quoting | Deskripsi|
 |---|---|---|
 | 1 | Single Quote (') | Semua metakarakter di antara single quote akan kehilangan makna khusus |
