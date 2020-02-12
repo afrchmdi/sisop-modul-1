@@ -375,7 +375,7 @@ Namun yang akan dibahas lebih jauh hanyalah operator **aritmatika** dan **relasi
 
 Ada 3 cara yang dapat digunakan untuk melakukan operasi matematika, yaitu:
 1. Menggunakan perintah built-in **let**
-2. Menggunakan perintah eksternal **expr** atau **awk** 
+2. Menggunakan perintah eksternal **expr** 
 3. Menggunakan perintah subtitusi ` $((ekspresi))`
 
 Contoh:   
